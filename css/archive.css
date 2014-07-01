@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.form-group { margin-top: 10px; }
+
+.add_field { color: #999999; }
+.add_field .add_text { display: none; }
+.add_field:hover .add_text { display: inline; }
