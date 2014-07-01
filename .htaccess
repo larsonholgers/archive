@@ -1,0 +1,10 @@
+ErrorDocument 404 /404.shtml
+RewriteEngine on
+
+# do not do anything for already existing files
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule .+ - [L]
+
+RewriteRule !\.(gif|jpg|png|css|mov|m4v|shtml|pdf|iso)$ /Users/larsonholgers/Sites/nhsarchive/content.php
