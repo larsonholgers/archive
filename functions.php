@@ -87,11 +87,10 @@ function sanitize($input) {
 	        $output[$var] = sanitize($val);
 	    }
 	} else {
-	    if (get_magic_quotes_gpc()) {
-	        $input = stripslashes($input);
-	    }
-	    $input  = cleanInput($input);
-	    $output = mysql_real_escape_string($input);
+	    $input = stripslashes($input);
+		$input = htmlentities($input);
+		$input = strip_tags($input);
+		$output = $input;
 	}
 	return $output;
 	

@@ -32,8 +32,6 @@ $value_id = '';
 //INSERT ENTRY
 $add_entry_sql = "INSERT INTO `entry` (`record_id`, `entry_description`, `year`) VALUES ('".$_POST['record_id']."','".$_POST['entry_description']."','".$_POST['year']."')";
 
-echo $add_entry_sql;
-
 $db->Execute($add_entry_sql);
 $entry_id = $db->Insert_ID();
 
