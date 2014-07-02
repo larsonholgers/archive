@@ -16,8 +16,8 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- Bootstrap -->
-    <link href="/css/archive.css" rel="stylesheet">
-    <link href="/css/datepicker.css" rel="stylesheet">
+    <link href="css/archive.css" rel="stylesheet">
+    <link href="css/datepicker.css" rel="stylesheet">
     
   </head>
   <body>
