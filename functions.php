@@ -50,7 +50,7 @@ function uploadFile($file,$update="", $upload_to="/images/entries/") {
 		//insert in the DB
 		
 		if ($update == "") {
-			$sql = "INSERT INTO image (image_id, file, ext, dir) VALUES (NULL, ".$file_id.", '".$file_ext."', '".$upload_to."')";
+			$sql = "INSERT INTO image (image_id, file, ext, dir) VALUES (NULL, ".$file_id.", '".$file_ext."', '".$upload_to_db."')";
 			$db->Execute($sql);
 			$callback['uploaded_id'] = $db->Insert_ID();
 		} else {
