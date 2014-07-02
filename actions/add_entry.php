@@ -35,6 +35,8 @@ $add_entry_sql = "INSERT INTO `entry` (`record_id`, `entry_description`, `year`,
 $db->Execute($add_entry_sql);
 $entry_id = $db->Insert_ID();
 
+echo "<!-- add entry sql: $add_entry_sql -->";
+
 //INSERT FIELD INFO
 if (is_array($field_data)) {
 	foreach($field_data as $field_id => $value_id) {
