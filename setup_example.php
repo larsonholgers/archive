@@ -1,6 +1,8 @@
 <?php
 //base dir
-$base_dir = "[PATH TO BASE DIR]";
+$site_base = "[PATH TO SITE BASE]";
+$site_folder = "[SITE FOLDER]";
+$base_dir = $site_base.$site_folder.'/';
 $shared_dir = "[PATH TO SHARED RESOURCES]";
 $template_dir = $base_dir.'templates';
 
