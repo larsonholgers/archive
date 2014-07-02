@@ -18,7 +18,8 @@ function uploadFile($file,$update="", $upload_to="/images/entries/") {
 	$db = newDB();
 	
 	//This assigns the subdirectory you want to save into... make sure it exists!
-	$target = $_SERVER['DOCUMENT_ROOT'].$upload_to;
+	$cwd = getcwd();
+	$target = $cwd.$upload_to;
 	$file_ext = ".".$ext;
 	
 	//look up in DB and create file number
