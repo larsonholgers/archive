@@ -30,7 +30,7 @@ $field_id = '';
 $value_id = '';
 
 //INSERT ENTRY
-$add_entry_sql = "INSERT INTO `entry` (`record_id`, `entry_description`, `year`) VALUES ('".$_POST['record_id']."','".$_POST['entry_description']."','".$_POST['year']."')";
+$add_entry_sql = "INSERT INTO `entry` (`record_id`, `entry_description`, `year`, `loan_date`) VALUES ('".$_POST['record_id']."','".$_POST['entry_description']."','".$_POST['year']."','".$_POST['loan_date']."')";
 
 $db->Execute($add_entry_sql);
 $entry_id = $db->Insert_ID();

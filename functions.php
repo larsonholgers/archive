@@ -22,6 +22,9 @@ function uploadFile($file,$update="", $upload_to="/images/entries/") {
 	$target = $cwd.$upload_to;
 	$file_ext = ".".$ext;
 	
+	//path to image directory for DB
+	$upload_to_db = str_replace($_SERVER['DOCUMENT_ROOT'], "", getcwd()).$upload_to;
+	
 	//look up in DB and create file number
 	$sql_cnt=$db->GetRow('SELECT file FROM image ORDER BY file DESC LIMIT 1');
 	
@@ -51,7 +54,7 @@ function uploadFile($file,$update="", $upload_to="/images/entries/") {
 			$db->Execute($sql);
 			$callback['uploaded_id'] = $db->Insert_ID();
 		} else {
-			$sql = "UPDATE image SET file = '".$file_id."', ext = '".$file_ext."', dir = '".$upload_to."' WHERE image_id = '".$update."'";
+			$sql = "UPDATE image SET file = '".$file_id."', ext = '".$file_ext."', dir = '".$upload_to_db."' WHERE image_id = '".$update."'";
 			$db->Execute($sql);
 			$callback['uploaded_id'] = $update;
 		}
