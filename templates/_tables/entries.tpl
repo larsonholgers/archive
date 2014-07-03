@@ -1,8 +1,6 @@
 <table class="table table-striped">
 	<thead>
 	<tr>
-		<th>#</th>
-		<th>Description</th>
 		<th><span class="glyphicon glyphicon-picture"></span></th>
 		{foreach $fields as $f}
 		{if $f.table_display == 'Y'}
@@ -15,8 +13,6 @@
 	
 	{foreach $entries as $e}
 	<tr>
-		<td>{$e.record_id}</td>
-		<td>{$e.entry_description}</td>
 		<td>
 			{if $e.images.0 != ''}
 				{image image_id=$e.images.0 w=100}

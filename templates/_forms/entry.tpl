@@ -7,8 +7,8 @@
 			</div>
 			
 			<div class="form-group">
-			<label for="entry_description">Description</label>
-			<textarea name="entry_description" class="form-control" rows="3">{$entry.entry_description}</textarea>
+			<label for="entry_description">Comments</label>
+			<textarea name="entry_comments" class="form-control" rows="3">{$entry.entry_comments}</textarea>
 			</div>
 			
 			<div class="form-group">
