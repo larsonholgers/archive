@@ -30,10 +30,11 @@ $field_id = '';
 $value_id = '';
 
 //INSERT ENTRY
-$add_entry_sql = "INSERT INTO `entry` (`record_id`, `entry_description`, `year`, `loan_date`) VALUES ('".$_POST['record_id']."','".$_POST['entry_description']."','".$_POST['year']."','".$_POST['loan_date']."')";
+$add_entry_sql = "INSERT INTO `entry` (`record_name`, `entry_comments`, `year`, `loan_date`) VALUES ('".$_POST['record_name']."','".$_POST['entry_comments']."','".$_POST['year']."','".$_POST['loan_date']."')";
 
 $db->Execute($add_entry_sql);
 $entry_id = $db->Insert_ID();
+logWrite('log.txt',$add_entry_sql);
 
 //INSERT FIELD INFO
 if (is_array($field_data)) {

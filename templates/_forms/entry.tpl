@@ -2,8 +2,8 @@
 	<div class="row">
 		<div class="col-md-3">
 			<div class="form-group">	
-			<label for="record_id">Record Number</label>
-			<input type="text" name="record_id" class="form-control" placeholder="Record ID" value="{$entry.record_id}">
+			<label for="record_name">Record Name</label>
+			<input type="text" name="record_name" class="form-control" placeholder="Record Name" value="{$entry.record_name}">
 			</div>
 			
 			<div class="form-group">
