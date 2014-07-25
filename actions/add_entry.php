@@ -41,6 +41,7 @@ if (is_array($field_data)) {
 	foreach($field_data as $field_id => $value_id) {
 		$insert_value_sql = "INSERT INTO `entry_field_link` (`entry_id`, `field_id`, `value_id`) VALUES ('".$entry_id."', '".$field_id."', '".$value_id."')";
 		$db->Execute($insert_value_sql);
+		logWrite('log.txt',$insert_value_sql);
 	}
 }
 
@@ -52,5 +53,6 @@ if ($_FILES['image_upload']['name'] != "") {
 if ($image_id > 0) {
 	$image_sql = "INSERT INTO `entry_image_link` (`entry_id`, `image_id`) VALUES ('".$entry_id."', '".$image_id."')";
 	$db->Execute($image_sql);
+	logWrite('log.txt',$image_sql);
 }
 ?>
