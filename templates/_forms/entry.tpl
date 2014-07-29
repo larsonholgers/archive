@@ -90,8 +90,8 @@
 			<button type="submit" class="btn btn-default">Add Entry</button>
 			{else}
 			<input type="hidden" name="entry_id" value="{$entry.entry_id}" />
-			<input type="hidden" name="action" value="update_entry" />
-			<!-- <button type="submit" class="btn btn-default">Update Entry</button> -->
+			<input type="hidden" name="action" value="edit_entry" />
+			<button type="submit" class="btn btn-default">Update Entry</button>
 			{/if}
 		
 		</div>

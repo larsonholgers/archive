@@ -20,6 +20,18 @@ if (file_exists($template_dir.'/'.$tpl) && $tpl != '') {
 	$smarty->assign('tpl','index.tpl');
 }
 
+//actions
+switch ($_POST['action']){
+	case 'add_entry':
+		include('actions/add_entry.php');
+	break;
+	case 'edit_entry':
+		include('actions/edit_entry.php');
+	break;
+	default:
+	break;
+}
+
 //fields
 $all_fields = $db->GetAll("SELECT * FROM `field` ORDER BY `table_display` ASC, `table_order` ASC");
 //values
@@ -59,6 +71,9 @@ $years = array_combine(range(1973,date('Y')), range(1973,date('Y')));
 $smarty->assign('years',$years);
 $smarty->assign('values',$values);
 $smarty->assign('fields',$fields);
+
+$link_root = str_replace('content.php', '', $_SERVER['PHP_SELF']);
+$smarty->assign('link_root', $link_root);
 
 //tpl
 $smarty->display('content.tpl');
