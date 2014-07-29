@@ -5,6 +5,7 @@ include("setup.php");
 //remove the folder i.e. "xxx.xxx.x.xxx/archive/"
 if(($key = array_search($site_folder, $args)) !== false) {
     unset($args[$key]);
+    $args = array_values($args);
 }
 
 if (count($args) > 0) {
