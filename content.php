@@ -35,17 +35,27 @@ foreach ($all_fields as $k => $field) {
 	}
 }
 
-//get all entries
-$entries = $db->GetAll("SELECT * FROM `entry`");
-foreach ($entries as $k => $e) {
-	$entries[$k]['values'] = $db->GetAssoc("SELECT `field_id`, `value_id` FROM `entry_field_link` WHERE `entry_id` = '".$e['entry_id']."'");
-	$entries[$k]['images'] = $db->GetCol("SELECT `image_id` FROM `entry_image_link` WHERE `entry_id` = '".$e['entry_id']."'");
+//display entries
+if ($args[0] != 'edit') {
+	$entries = $db->GetAll("SELECT * FROM `entry`");
+	foreach ($entries as $k => $e) {
+		$entries[$k]['values'] = $db->GetAssoc("SELECT `field_id`, `value_id` FROM `entry_field_link` WHERE `entry_id` = '".$e['entry_id']."'");
+		$entries[$k]['images'] = $db->GetCol("SELECT `image_id` FROM `entry_image_link` WHERE `entry_id` = '".$e['entry_id']."'");
+	}
+	$smarty->assign('entries',$entries);	
+}
+
+//edit
+if ($args[0] == 'edit') {
+	$entry = $db->GetRow("SELECT * FROM `entry` WHERE `entry_id` = '".$args[1]."'");
+	$entry['fields'] = $db->GetAssoc("SELECT `field_id`, `value_id` FROM `entry_field_link` WHERE `entry_id` = '".$args[1]."'");
+	$entry['images'] = $db->GetCol("SELECT `image_id` FROM `entry_image_link` WHERE `entry_id` = '".$args[1]."'");
+	$smarty->assign('entry',$entry);
 }
 
 $years = array_combine(range(1973,date('Y')), range(1973,date('Y')));
 
 $smarty->assign('years',$years);
-$smarty->assign('entries',$entries);
 $smarty->assign('values',$values);
 $smarty->assign('fields',$fields);
 

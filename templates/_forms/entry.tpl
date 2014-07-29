@@ -13,7 +13,7 @@
 			
 			<div class="form-group">
 			<label for="year">Year</label>
-			{formDropDown options=$years name="year" no_selection="- Select 'Year'"}
+			{formDropDown options=$years name="year" selected=$entry.year no_selection="- Select 'Year'"}
 			</div>
 			
 			<div class="form-group">
@@ -50,7 +50,7 @@
 				</label>
 			{if $f.field_type == 'dropdown'}
 					{if $f.values|@count > 0 && $f.values != ''}
-					{formDropDown options=$f.values name=$f.input_dropdown no_selection="- Select '"|cat:$f.field_name|cat:"'"}
+					{formDropDown options=$f.values name=$f.input_dropdown selected=$entry.fields[$f.field_id] no_selection="- Select '"|cat:$f.field_name|cat:"'"}
 					{/if}
 					
 					<div style="margin-top: 5px;">
@@ -75,11 +75,24 @@
 			
 			<div class="form-group">
 			<label>Image: </label>
+			{if $entry.images|@count > 0}
+				{foreach $entry.images as $img}
+					{image image_id=$img w=240}
+				{/foreach}
+			{/if}
+			{if $entry.entry_id == ''}
 			<input class="form-control" name="image_upload" type="file" />
+			{/if}
 			</div>
 			
+			{if $entry.entry_id == ''}
 			<input type="hidden" name="action" value="add_entry" />
 			<button type="submit" class="btn btn-default">Add Entry</button>
+			{else}
+			<input type="hidden" name="entry_id" value="{$entry.entry_id}" />
+			<input type="hidden" name="action" value="update_entry" />
+			<!-- <button type="submit" class="btn btn-default">Update Entry</button> -->
+			{/if}
 		
 		</div>
 			
