@@ -35,6 +35,8 @@ foreach ($all_fields as $k => $field) {
 	}
 }
 
+print_r($args);
+
 //display entries
 if ($args[0] != 'edit') {
 	$entries = $db->GetAll("SELECT * FROM `entry`");
