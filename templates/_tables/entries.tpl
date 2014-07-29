@@ -23,7 +23,7 @@
 		<td>{$values[$e.values[$f.field_id]]}</td>
 		{/if}
 		{/foreach}
-		<td><a href="/edit/{$e.entry_id}/"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+		<td><a href="edit/{$e.entry_id}/"><span class="glyphicon glyphicon-eye-open"></span></a></td>
 	</tr>
 	{/foreach}				
 	
