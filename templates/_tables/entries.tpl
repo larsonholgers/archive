@@ -3,8 +3,10 @@
 	<thead>
 	<tr>
 		<th><span class="glyphicon glyphicon-picture"></span></th>
+		{$cnt = 0}
 		{foreach $fields as $f}
 		{if $f.table_display == 'Y'}
+		{$cnt = $cnt + 1}
 		<th>{$f.field_name}</th>
 		{/if}
 		{/foreach}
@@ -30,7 +32,13 @@
 	</tr>
 	{/foreach}				
 	
+	<tr>
+		<td></td>
+		<td colspan="{$cnt}"></td>
+		<td></td>
+		<td><input type="hidden" name="action" value="delete_entry" />
+	<button type="submit" class="btn btn-default btn-xs btn-danger">Delete Selected</button></td>
+	</tr>
+	
 </table>
-	<input type="hidden" name="action" value="delete_entry" />
-	<button type="submit" class="btn btn-default">Submit</button>
 </form>
