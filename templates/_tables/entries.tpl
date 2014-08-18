@@ -1,3 +1,4 @@
+<form method="post">
 <table class="table table-striped">
 	<thead>
 	<tr>
@@ -7,6 +8,7 @@
 		<th>{$f.field_name}</th>
 		{/if}
 		{/foreach}
+		<th>View</th>
 		<th></th>
 	</tr>
 	</thead>
@@ -24,7 +26,11 @@
 		{/if}
 		{/foreach}
 		<td><a href="edit/{$e.entry_id}/"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+		<td><input type="checkbox" name="entry_ids[]" value="{$e.entry_id}" /></td>
 	</tr>
 	{/foreach}				
 	
 </table>
+	<input type="hidden" name="action" value="delete_entry" />
+	<button type="submit" class="btn btn-default">Submit</button>
+</form>

@@ -28,6 +28,9 @@ switch ($_POST['action']){
 	case 'edit_entry':
 		include('actions/edit_entry.php');
 	break;
+	case 'delete_entry':
+		include('actions/delete_entry.php');
+	break;
 	default:
 	break;
 }
@@ -74,6 +77,9 @@ $smarty->assign('fields',$fields);
 
 $link_root = str_replace('content.php', '', $_SERVER['PHP_SELF']);
 $smarty->assign('link_root', $link_root);
+
+//messages
+$smarty->assign('message',$message);
 
 //tpl
 $smarty->display('content.tpl');

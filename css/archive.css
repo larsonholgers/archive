@@ -6,3 +6,5 @@
 .add_field { color: #999999; }
 .add_field .add_text { display: none; }
 .add_field:hover .add_text { display: inline; }
+
+.message { color: red; font-style: italic; font-weight: bold; padding: 10px 0px; text-align: center; }

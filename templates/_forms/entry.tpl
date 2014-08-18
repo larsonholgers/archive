@@ -1,4 +1,13 @@
 <form role="form" method="post" enctype="multipart/form-data">
+	
+	{if $message != ''}
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 message">
+			{$message}
+		</div>
+	</div>
+	{/if}
+	
 	<div class="row">
 		<div class="col-md-3">
 			<div class="form-group">	
