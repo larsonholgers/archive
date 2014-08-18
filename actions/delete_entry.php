@@ -15,7 +15,7 @@ foreach ($_POST['entry_ids'] as $entry_id) {
 		
 		foreach ($images as $image_id => $image) {
 			$sql[] = "DELETE FROM `image` WHERE `image_id` = '".$image_id."'";
-			$imgs_to_remove[] = getcwd().$image;
+			$imgs_to_remove[] = substr_replace($site_base ,"",-1).$image;
 		}
 		
 		$sql[] = "DELETE FROM `entry_image_link` WHERE `entry_image_link`.`entry_id` = '".$entry_id."'";
