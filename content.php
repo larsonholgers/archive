@@ -42,7 +42,7 @@ foreach ($all_fields as $k => $field) {
 	$fields[$field['field_id']] = $field;
 	$fields[$field['field_id']]['input_textline'] = "textline[".$field['field_id']."]";
 	$fields[$field['field_id']]['input_dropdown'] = "dropdown[".$field['field_id']."]";
-	$field_values = $db->GetAssoc("SELECT `value_id`, `value` FROM `field_values` WHERE `field_id` = '".$field['field_id']."'");
+	$field_values = $db->GetAssoc("SELECT `value_id`, `value` FROM `field_values` WHERE `field_id` = '".$field['field_id']."' ORDER BY `value` ASC");
 	$fields[$field['field_id']]['values'] = $field_values;
 	
 	//get all values
