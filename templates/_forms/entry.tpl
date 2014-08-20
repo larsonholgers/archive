@@ -53,7 +53,7 @@
 					{$f.field_name}
 					{if $f.hide_textline == 'Y' && $f.can_add == 'Y'}
 					<button type="button" class="btn btn-default btn-xs add_field" data-field="add_field_{$f.field_id}">
-					<span class="glyphicon glyphicon-plus-sign"></span><span class="add_text"> Add '{$f.field_name}'</span>
+					<span class="glyphicon glyphicon-plus-sign"></span>
 					</button>
 					{/if}
 				</label>
