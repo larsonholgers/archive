@@ -111,6 +111,7 @@ if ($args[0] == 'edit') {
 
 $years = array_combine(range(1973,date('Y')), range(1973,date('Y')));
 
+$smarty->assign('args',$args);
 $smarty->assign('years',$years);
 $smarty->assign('values',$values);
 $smarty->assign('fields',$fields);
