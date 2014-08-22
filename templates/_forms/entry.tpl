@@ -94,7 +94,7 @@
 				{/foreach}
 			{/if}
 			{if $entry.entry_id != ''}
-			<p>Add an additional image</p>
+			<p>Add an {if $entry.images|@count > 0}additional{/if} image</p>
 			{/if}
 			<input class="form-control" name="image_upload" type="file" />
 			</div>
