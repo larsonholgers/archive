@@ -1,6 +1,6 @@
 <?php
 //required
-$required = array('record_name', 'year');
+$required = array('record_name');
 
 $check = 0;
 foreach ($required as $r) {
