@@ -1,6 +1,8 @@
 <div class="container">
-
-	{include "_forms/entry.tpl"}
+	
+	<div class="well">
+		{include "_forms/entry.tpl"}
+	</div>
 
 <div class="row">
 	<div class="col-md-12">

@@ -1,3 +1,5 @@
+{include "pagination.tpl"}
+
 <form method="post">
 <table class="table table-striped">
 	<thead>
@@ -27,7 +29,7 @@
 		<td>{$values[$e.values[$f.field_id]]}</td>
 		{/if}
 		{/foreach}
-		<td><a href="edit/{$e.entry_id}/"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+		<td><a href="{$link_root}edit/{$e.entry_id}/"><span class="glyphicon glyphicon-eye-open"></span></a></td>
 		<td><input type="checkbox" name="entry_ids[]" value="{$e.entry_id}" /></td>
 	</tr>
 	{/foreach}				
@@ -42,3 +44,5 @@
 	
 </table>
 </form>
+
+{include "pagination.tpl"}
