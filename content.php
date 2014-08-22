@@ -21,7 +21,7 @@ if (file_exists($template_dir.'/'.$tpl) && $tpl != '') {
 }
 
 //actions
-switch ($_POST['action']){
+switch ($_REQUEST['action']){
 	case 'add_entry':
 		include('actions/add_entry.php');
 	break;
@@ -30,6 +30,9 @@ switch ($_POST['action']){
 	break;
 	case 'delete_entry':
 		include('actions/delete_entry.php');
+	break;
+	case 'remove_image':
+		include('actions/remove_image.php');
 	break;
 	default:
 	break;

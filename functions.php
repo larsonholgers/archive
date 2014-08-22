@@ -28,12 +28,8 @@ function uploadFile($file,$update="", $upload_to="/images/entries/") {
 	//look up in DB and create file number
 	$sql_cnt=$db->GetRow('SELECT file FROM image ORDER BY file DESC LIMIT 1');
 	
-	echo $sql_cnt['file'];
-	
 	//the new file will be one more then the last	
 	$file_id = $sql_cnt['file']+1;	
-	
-	echo $file_id;
 	
 	if ($update > 0) {
 		

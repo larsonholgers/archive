@@ -1,0 +1,14 @@
+UPDATE `entry` SET `record_name` = 'SC_Roskopp_Face_TShirt_Art', `entry_comments` = 'Artist: Phillips', `year` = '1988', `loan_date` = '0000-00-00' WHERE `entry`.`entry_id` = '130'
+INSERT INTO `entry_field_link` (`entry_id`, `field_id`, `value_id`) VALUES ('130', '2', '33') ON DUPLICATE KEY UPDATE `value_id` = '33'
+INSERT INTO `entry_field_link` (`entry_id`, `field_id`, `value_id`) VALUES ('130', '6', '52') ON DUPLICATE KEY UPDATE `value_id` = '52'
+INSERT INTO `entry_field_link` (`entry_id`, `field_id`, `value_id`) VALUES ('130', '1', '1') ON DUPLICATE KEY UPDATE `value_id` = '1'
+UPDATE `entry` SET `record_name` = 'SC_Roskopp_Face_TShirt_Art', `entry_comments` = 'Artist: Phillips', `year` = '1988', `loan_date` = '0000-00-00' WHERE `entry`.`entry_id` = '130'
+INSERT INTO `entry_field_link` (`entry_id`, `field_id`, `value_id`) VALUES ('130', '2', '33') ON DUPLICATE KEY UPDATE `value_id` = '33'
+INSERT INTO `entry_field_link` (`entry_id`, `field_id`, `value_id`) VALUES ('130', '6', '52') ON DUPLICATE KEY UPDATE `value_id` = '52'
+INSERT INTO `entry_field_link` (`entry_id`, `field_id`, `value_id`) VALUES ('130', '1', '1') ON DUPLICATE KEY UPDATE `value_id` = '1'
+INSERT INTO `entry_image_link` (`entry_id`, `image_id`) VALUES ('130', '120')
+UPDATE `entry` SET `record_name` = 'SC_Roskopp_Face_TShirt_Art', `entry_comments` = 'Artist: Phillips', `year` = '1988', `loan_date` = '0000-00-00' WHERE `entry`.`entry_id` = '130'
+INSERT INTO `entry_field_link` (`entry_id`, `field_id`, `value_id`) VALUES ('130', '2', '33') ON DUPLICATE KEY UPDATE `value_id` = '33'
+INSERT INTO `entry_field_link` (`entry_id`, `field_id`, `value_id`) VALUES ('130', '6', '52') ON DUPLICATE KEY UPDATE `value_id` = '52'
+INSERT INTO `entry_field_link` (`entry_id`, `field_id`, `value_id`) VALUES ('130', '1', '1') ON DUPLICATE KEY UPDATE `value_id` = '1'
+INSERT INTO `entry_image_link` (`entry_id`, `image_id`) VALUES ('130', '121')

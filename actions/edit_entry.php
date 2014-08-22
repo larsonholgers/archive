@@ -46,7 +46,7 @@ if (is_array($field_data)) {
 		logWrite('log.txt',$insert_value_sql);
 	}
 }
-/*
+
 //IMAGE UPLOAD
 if ($_FILES['image_upload']['name'] != "") {
 	$img_upload = uploadFile($_FILES['image_upload']);
@@ -57,5 +57,5 @@ if ($image_id > 0) {
 	$db->Execute($image_sql);
 	logWrite('log.txt',$image_sql);
 }
-*/
+
 ?>

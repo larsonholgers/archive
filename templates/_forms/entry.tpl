@@ -1,3 +1,4 @@
+<div class="well">
 <form role="form" method="post" enctype="multipart/form-data">
 	
 	{if $message != ''}
@@ -83,15 +84,19 @@
 		<div class="col-md-3">
 			
 			<div class="form-group">
-			<label>Image: </label>
+			<label>Image{if $entry.images|@count > 0}s{/if} : </label>
 			{if $entry.images|@count > 0}
 				{foreach $entry.images as $img}
-					{image image_id=$img w=240}
+					<p>
+						{image image_id=$img w=240}
+						<br /><a href="{$link_root}edit/{$entry.entry_id}/?action=remove_image&image_id={$img}&entry_id={$entry.entry_id}"><span class="glyphicon glyphicon-trash"></span></a>
+					</p>
 				{/foreach}
 			{/if}
-			{if $entry.entry_id == ''}
-			<input class="form-control" name="image_upload" type="file" />
+			{if $entry.entry_id != ''}
+			<p>Add an additional image</p>
 			{/if}
+			<input class="form-control" name="image_upload" type="file" />
 			</div>
 			
 			{if $entry.entry_id == ''}
@@ -107,3 +112,4 @@
 			
 	</div>
 </form>
+</div>
