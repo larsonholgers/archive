@@ -60,7 +60,7 @@ if ($args[0] != 'edit' || $args[0] != 'page') {
 	//default sorting arguments
 	$order_by = array('entry_id', 'DESC');
 	$where = '';
-	$limit = array(0,24);
+	$limit = array(0,48);
 	
 	if ($args[1] != '') {
 		$limit = explode("-", $args[1]);
